@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ubuntu-desktop:
+    image: dorowu/ubuntu-desktop-lxde-vnc
+    ports:
+      - 6080:80
+      - 5905:5900
+    environment:
+      VNC_PASSWORD: "admin"
+      USER: "admin"
+      PASSWORD: "admin"
+      HTTP_PASSWORD: "admin"
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: unless-stopped
